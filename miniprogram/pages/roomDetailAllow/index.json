@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "cus-picker":"../../components/cusPicker/index",
+    "calendar":"../../components/calendar/calendar",
+    "hw-actionSheet": "../../components/actionSheet/actionSheet"
+  }
+}

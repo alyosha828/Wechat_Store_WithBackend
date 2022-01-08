@@ -1,0 +1,134 @@
+/* pages/roomDetail/index.wxss */
+.main-image{
+    width: 100%;
+}
+.container {
+  display: contents;
+  /* flex-direction: column; */
+  align-items: center;
+  box-sizing: border-box;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 30px;
+}
+page {
+    background-color: #f6f6f6;
+    padding-bottom: 60rpx;
+  }
+  
+.room-main-info{
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    width: 95%;
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(0, 0, 0);
+}
+
+.cover-view {
+    position: absolute;
+    top: calc(50% - 150rpx);
+    left: calc(50% - 300rpx);
+    /* opacity: .7; */
+  }
+  
+  .flex-wrp{
+    display:flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .flex-item{
+    width: 200rpx;
+    height: 300rpx;
+    font-size: 26rpx;
+  }
+  .room-subtitle{
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 20px;
+    color: #0D0D0D;
+  }
+  .room-subdetail{
+    font-size: 11px;
+    margin-top: 5px;
+    color: #A3A3A3;
+  }
+  
+  .room-account-level{
+    font-size: 12px;
+    font-weight: 500;
+    color: #464646;
+  }
+  
+  .room-count{
+    font-size: 14px;
+    font-weight: 500;
+    color: #464646;
+  }
+  .room-account-car{
+    font-size: 11px;
+    font-weight: 500;
+    color: #464646;
+  }
+  
+.view-btn{
+    font-size: 14px;
+    font-weight: 550;
+    background-color: #05C160;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    width: 200px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:20px;
+    margin-bottom: 10px;
+    border-radius: 9px;
+  }
+.view-btn-disable{
+    font-size: 14px;
+    font-weight: 550;
+    background-color: #DCDCDC;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    width: 200px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:20px;
+    margin-bottom: 10px;
+    border-radius: 9px;
+  }
+  
+.power_item_icon {
+    width: 15px;
+    height: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .room-edit{    
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 1px;
+    border-color: #e6e6e6;
+    padding: 5px;
+    height: 60px;
+    width: auto;
+    margin-top: 10px;
+    font-size: 14;
+  }

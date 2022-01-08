@@ -1,0 +1,6 @@
+<!--pages/splash.wxml-->
+<view class="splash-container">
+  <image class="splash-background" src="../../images/splash.png" bindload="autoImage" style="width:{{imgWidth}};height:{{ imgHeight }}" mode="scaleToFill">
+  </image>
+      
+</view>

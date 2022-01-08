@@ -1,0 +1,105 @@
+<!--index.wxml-->
+<!-- <SearchInput></SearchInput> -->
+<view style="padding:3px;display: flex;">
+  <text style="margin-left: 10px;font-size: 16px;color: #0D0D0D;font-weight: 550;">Choose a Store:</text>
+  <view style="margin-left: 5px;" bindtap="showDropdown">
+    <text style="font-size: 16px;color: #A7AEBE;">{{storeList[selectedStoreId].name}}</text>
+    <image src="../../images/down-arrow-icon.png" class="down-icon"></image>
+  </view>
+</view>
+<view class="dropdown-layout" hidden="{{dropDownHide}}" bindtap="clickSearchBackground">
+  <view class="dropdown-cell" wx:for="{{storeList}}"  wx:for-item="item" data-index="{{index}}" bindtap="clickCell">{{item.name}}
+  </view>
+</view>
+<view class="container">
+  <view class="page-body"  style="width:100%;position:relative;">
+    <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{storeList[selectedStoreId].storeimages}}">
+          <swiper-item>
+            <image style="width: 100%;" src="{{item}}" mode="aspectFill" lazy-load="true"/>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view> 
+  <!-- <image style="z-index: -1;width: 100%;" src="../../images/home-background.svg" class="slide-image" mode="aspectFill" lazy-load="true"/> -->
+  <view class="room-info-panel">
+    <view class="power">
+      <view class="power_info" style="margin-bottom: 5px;">
+        <image style="margin-right: 5px;width: 15px;height: 15px;" src="../../images/location.svg"></image>
+        <view class="power_info_text" bindtap="gotoLocation" data-latitude="{{storeList[selectedStoreId].latitude}}" data-longitude="{{storeList[selectedStoreId].longitude}}">
+          <view class="power_info_text_tip">{{storeList[selectedStoreId].positiontext}}</view>
+        </view>
+        <image bindtap="freeTell" class="power_info_more" src="../../images/call-incoming.svg" data-mobile="{{storeList[selectedStoreId].positionphone}}"></image>
+      </view> 
+      <!-- bindtap="onClickPowerInfo" -->
+      <!-- bindtap="openActionsheet"  -->
+      <view class="power_info">
+        <image style="margin-right: 5px;width: 15px;height: 15px;" src="../../images/timer.svg"></image>
+        <view class="power_info_text">
+          <view class="power_info_text_title">{{storeList[selectedStoreId].timetext}}</view>
+          <view class="power_info_text_tip">{{storeList[selectedStoreId].time}}</view>
+        </view>
+        <image bindtap="freeTell" class="power_info_more" src="../../images/call-incoming.svg" data-mobile="{{storeList[selectedStoreId].timephone}}"></image>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="tabs-container">
+    <van-tabs bind:change="tabClick" sticky title-active-color="#2569FD" color="white">
+      <van-tab wx:for="{{tabs}}" wx:key="index" title="{{item}}" title-style="font-size: 30rpx"></van-tab>
+    </van-tabs>
+  </view> -->
+  <view style="background-color: white;width: 95%;padding-left: 30px;font-size: 13px;font-style: normal;padding-top:10px;padding-bottom: 10px; font-weight: 600;">Hotel Room Type</view>
+  <view style="background-color: #707070;height: 3px;width: 100px;margin-left: 30px;margin-right: auto;"></view>
+
+  <view class="roomList" wx:key="title" wx:for="{{storeList[selectedStoreId].roomtypes}}" wx:for-item="item">
+    <view class="room_info" data-index="{{index}}" bindtap="onClickPowerInfo">
+      <view style="width: 140px;height: 180px;">
+        <image class="room_info_image" src="{{item.imageurl}}" mode="aspectFill"></image>
+      </view>
+      <view class="room_info_main">
+        <view class="room_info_text_title">{{item.roomname}}</view>
+        <view style="margin-left: 5px;margin-top: 5px;width: 40px;height: 3px;background-color: #707070;"></view>
+        <view class="room_info_text_detail">{{item.roomdetail}}</view>
+        <view class="room_info_price">
+          <view class="flex-item price-text-1">Lorem ${{item.roomprice1}}</view>
+          <view class="flex-item price-text-2">Lorem ${{item.roomprice2}}</view>
+        </view>
+        <!-- <button class="yeding-btn" type="primary" size="default">预订</button>  bindtap="showRoomDetail" -->
+        <view class="yeding-btn">VIEW</view>
+      </view>
+    </view>
+    <!-- <view wx:if="{{power.showItem}}">
+      <view wx:key="title" wx:for="{{power.item}}">
+        <view class="line"></view>
+        <view class="power_item" bindtap="jumpPage" data-page="{{item.page}}">
+          <view class="power_item_title">{{item.title}}</view>
+          <image class="power_item_icon" src="../../images/arrow.svg"></image>
+        </view>
+      </view>
+    </view> -->
+  </view>
+
+
+  <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
+  <hw-actionSheet bindactiontap="closeActionSheet" show="{{showActionsheet}}" actions="{{groups}}">
+    <!-- <view style="padding:60rpx;">
+      欢迎来到Demo集中营
+    </view> -->
+    
+    <calendar bind:change="dateChange" show="{{showActionsheet}}" spot="{{spot}}" ></calendar>
+    <!-- defaultTime="{{currentDate}}" -->
+    <!-- <view class="date-string">当前选中的日期是：{{dateString}}</view> -->
+  </hw-actionSheet>
+  
+  <cus-picker mode="{{modeSelector}}" cusPickerFlag="{{flagSelector}}" list="{{selectorList}}" defaultValue="{{selectorData}}" bind:no="noCusPicker" bind:ok="okCusPicker"></cus-picker>
+</view>
+<!-- <view class="homeMapShop" hidden="{{hiddenStatus}}">
+  <map
+    style="width: 100%; height: 100%;"
+    latitude="{{latitude}}"
+    longitude="{{longitude}}"
+  ></map>
+</view> -->

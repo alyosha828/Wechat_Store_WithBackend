@@ -1,0 +1,67 @@
+.cus-picker-outbox{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+}
+.cus-picker-in-box{
+  position:absolute;
+  bottom:0;
+  left:0;
+  background-color: #FFFFFF;
+  height:580rpx;
+  width:100%;
+}
+.cus-picker-btn-box{
+  width:100%;
+  height:108rpx;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2rpx  solid #f5f5f5;
+}
+.cus-picker-btn-no,.cus-picker-btn-ok{
+  padding:0;
+  line-height:72rpx;
+  height:72rpx;
+  font-size:32rpx;
+  text-align:center;
+  border-radius: 15rpx;
+  width:200rpx;
+}
+.cus-picker-btn-no{
+  background:#f5f5f5;
+  color:#333333;
+  margin-right: 10px;
+  margin-left: auto;
+}
+.cus-picker-btn-ok{
+  background:#05C160;
+  color:#FFFFFF;
+  margin-right: auto;
+  margin-left: 10px;
+}
+.cus-picker-btn-no-hover{
+  background:#e5e5e5;
+}
+.cus-picker-btn-ok-hover{
+  background:#05C160;
+}
+.cus-picker-cont-box{
+  width:100%;
+  height:470rpx;
+}
+.cus-picker-cont-picker{
+  width:100%;
+  height:100%;
+}
+.cus-picker-cont-picker-indicator-class{
+  height:80rpx;
+}
+.cus-picker-cont-picker-view-column{
+  line-height:80rpx;
+  text-align: center;
+  color:#333333;
+}

@@ -1,0 +1,23 @@
+<!--pages/profileIntro/index.wxml-->
+<view class="container">
+  <image style="width: 100%;" mode="" src="../../images/profile-back-one.png"bindload="autoImage" style="width:{{imgWidth}};height:{{ imgHeight }}" mode="aspectFill">
+  </image>
+  <view class="first-info-panel">
+    <view style="color: #0D0D0D;font-size: 16px;font-weight: 600;margin-left: 0px;margin-right: auto;text-transform: uppercase;margin-top: 15px;">
+      Watched the phone
+    </view>
+    <view style="width: 40px;margin-top: 5px;height: 3px;background-color: #707070;margin-left: 0px;margin-right: auto;"></view>
+    <view>
+      <view style="color: #A3A3A3;font-size: 14px;margin-top: 10px;margin-bottom: 5px;">
+        <span style="color: #0D0D0D">1</span> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      </view>
+      <view style="color: #A3A3A3;font-size: 14px;margin-top: 10px;margin-bottom: 5px;">
+        <span style="color: #0D0D0D">2</span> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      </view>
+      <view style="color: #A3A3A3;font-size: 14px;margin-top: 10px;margin-bottom: 5px;">
+        <span style="color: #0D0D0D">3</span> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      </view>
+      <view bindtap="showDetail" class="view-btn">VIEW</view>
+    </view>
+  </view>
+</view>

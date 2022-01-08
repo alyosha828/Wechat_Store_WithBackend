@@ -1,0 +1,9 @@
+<view>
+  <view class="homeMapShop">
+    <map
+      style="width: 100%; height: 100%;"
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+    ></map>
+  </view>
+</view>

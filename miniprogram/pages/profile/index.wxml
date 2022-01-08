@@ -1,0 +1,93 @@
+<!--index.wxml-->
+<view class="container">
+
+  <image class="power_item_icon" src="../../images/profile_background.png"></image>
+  <view style="height: auto;margin-left: 0px;margin-right: auto;width: 100%;">
+    <view style="width: 100%; margin-left: auto;margin-right: auto;" hidden="{{isLogin}}">
+      <image class="profile-user-image" mode="scaleToFill" src="../../images/persion_HL.png"></image>
+      <view style="text-align: center;margin-left: auto;margin-right: auto;width: 200px;font-size: 14px;" bindtap="clickLogin">Click here to login</view>
+    </view>
+    <view hidden="{{!isLogin}}"> 
+      <view style="width: 100%;display: flex;flex-direction: raw;">
+      <!-- <image class="profile-user-image-login" mode="scaleToFill" src="../../images/persion_HL.png"></image> -->
+      <view class="profile-user-image-login">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view style="position: absolute;margin-top:20px;align-items: center;">
+        <view style="margin-left: 90px;margin-right: auto;width: 200px;font-size: 14px;color: #A3A3A3;" bindtap="gotoIntro">
+          <open-data type="userNickName"></open-data>
+        </view>
+        <view style="display: flex;flex-direction: raw;margin-top: 5px;margin-left: 90px;align-items: center;font-size: 14px;" bindtap="gotoDetail">
+          <view style="background-color: #FCC214;border-radius: 10px;margin-right: 10px;padding-left: 5px;padding-right: 5px;font-size: 12px;color: white;">LV {{myLevel}}</view>
+          <!-- <view style="font-size: 14px;color: #A7AEBE">TITLE</view> -->
+        </view>
+      </view>
+    </view>
+    </view>
+    
+  </view>
+  
+  
+  <!-- <view class="first-info-panel">
+    <view style="display: flex;justify-content: space-between;margin-top:15px;margin-bottom:5px;margin-left: 0px;margin-right: auto;width: 100%;">
+      <view class="profile-item-name">Account Level</view>
+      <image class="profile_item_icon" src="../../images/arrow.svg"></image>
+    </view>
+    <view style="width: 100%;margin-top: 5px;height: 1.5px;background-color: #DBDBDB;"></view>
+    <view class="item-list-view">
+      <view class="item-view">
+        <image class="item-image" mode="aspectFit" src="../../images/profile-level-one.png"></image>
+        <view class="item-subview">one</view>
+      </view>
+      <view class="item-view">
+        <image class="item-image" mode="aspectFit" src="../../images/profile-level-two.png"></image>
+        <view class="item-subview">two</view>
+      </view>
+      <view class="item-view">
+        <image class="item-image" mode="aspectFit" src="../../images/profile-level-three.png"></image>
+        <view class="item-subview">three</view>
+      </view>
+      <view class="item-view">
+        <image class="item-image" mode="aspectFit" src="../../images/profile-level-four.png"></image>
+        <view class="item-subview">four</view>
+      </view>
+    </view>
+  </view> -->
+  <view class="first-info-panel">
+    <view class="profile-cell-two" bindtap="clickAccountLevel">
+      <view class="profile-item-name">Account Level</view>
+      <image class="profile_item_icon" src="../../images/arrow.svg"></image>
+    </view>
+    <view style="width: 100%;margin-top: 5px;height: 1.5px;background-color: #DBDBDB;"></view>
+    <view class="profile-cell-two" bindtap="clickAccountInfo">
+      <view class="profile-item-name">Account the car house</view>
+      <image class="profile_item_icon" src="../../images/arrow.svg"></image>
+    </view>
+    <view style="width: 100%;margin-top: 5px;height: 1.5px;background-color: #DBDBDB;"></view>
+    <view class="profile-cell-two" bindtap="clickFeedBack">
+      <view class="profile-item-name">Feedback</view>
+      <image class="profile_item_icon" src="../../images/arrow.svg"></image>
+    </view>
+    <view style="width: 100%;margin-top: 5px;height: 1.5px;background-color: #DBDBDB;margin-bottom: 10px;"></view>
+    
+  </view>
+  
+  <view class="second-info-panel">
+    <view class="profile-cell-two">
+      <image style="width:15px;height:15px;margin-left: 10px;" src="../../images/time-icon.png"></image>
+      <view style="display: flex;margin-left: 10px;margin-right: auto;font-size: 13px;">19-02-2021 Date</view>
+    </view>
+    <view style="width: 100%;margin-top: 5px;height: 1.5px;background-color: #DBDBDB;"></view>
+    <view class="profile-cell-two">
+      <image style="width:15px;height:15px;margin-left: 10px;"  src="../../images/url-icon.png"></image>
+      <view style="display: flex;margin-left: 10px;margin-right: auto;font-size: 13px;">www.company.com</view>
+    </view>
+  </view>
+
+
+</view>
+<view style="position: fixed;display: flex;flex-direction: column;bottom: 0;right: 0;">
+    <image style="width: 60px;height: 60px;" src="../../images/share-icon.png"></image>
+    <image style="width: 60px;height: 60px;" src="../../images/telephone-icon.png"></image>
+    <image style="width: 60px;height: 60px;" src="../../images/message-icon.png"></image>
+</view>

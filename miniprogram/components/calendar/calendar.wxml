@@ -1,0 +1,42 @@
+<!--components/calendar/calendar.wxml-->
+<view class="calendar">
+	<view class="title flex">
+		<view class="flex">
+			<view class="icon" bindtap="lastMonth" style="transform:rotate(180deg);">
+				<view class="iconfont icon-playfill"></view>
+			</view>
+			<picker value="{{selectDay.year+'-'+selectDay.month}}" bindchange="editMonth" mode="date" fields="month" class="year-month">{{selectDay.year}}.{{selectDay.month>9?selectDay.month:"0"+selectDay.month}}</picker>
+			<view class="icon" bindtap="nextMonth">
+				<view class="iconfont icon-playfill"></view>
+			</view>
+		</view>
+		<view catchtap="openChange" class="flex open" hidden="true">
+			<view>{{open?"收起":"展开"}}</view>
+			<view style="margin-left:6rpx;font-size:20rpx" class="iconfont icon-{{open?'fold':'unfold'}}"></view>
+		</view>
+	</view>
+
+	<!-- 日历头部 -->
+	<view class="flex-around calendar-week">
+		<view class="view">Sun</view>
+		<view class="view">Mon</view>
+		<view class="view">Tue</view>
+		<view class="view">Wed</view>
+		<view class="view">Thu</view>
+		<view class="view">Fri</view>
+		<view class="view">Sat</view>
+	</view>
+
+	<!-- 日历主体 -->
+	<view class="flex-start flex-wrap calendar-main" style="height:{{dateList.length/7*72}}rpx">
+		<view wx:for="{{dateList}}" wx:key="dateList" class="day">
+			<view class="bg {{(item.year === selectDayStart.year && item.month === selectDayStart.month && item.day === selectDayStart.day)?'selectStart':(item.year === selectDayEnd.year && item.month === selectDayEnd.month && item.day === selectDayEnd.day)?'selectEnd':''}}" catchtap="selectChange" data-day="{{item.day}}" data-year="{{item.year}}" data-month="{{item.month}}" data-date-string="{{item.dateString}}"
+			style="color: {{item.year === selectDay.year && item.month === selectDay.month?'#9e9e9e':'#333333'}}">
+				{{item.day}}
+				<!-- (item.day > selectDayStart.day) && item.day < selectDayEnd.day ? 'selectMid' : -->
+				<!-- (item.year === selectDayEnd.year && item.month === selectDayEnd.month) ? (item.day === selectDayEnd.day?'selectEnd':''):'other-month'):  -->
+			</view>
+			<view class="spot" wx:if="{{item.spot}}"></view>
+		</view>
+	</view>
+</view>

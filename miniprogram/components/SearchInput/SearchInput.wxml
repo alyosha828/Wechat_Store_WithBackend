@@ -1,0 +1,6 @@
+<view class="search_input">
+    <!-- <navigator url="/pages/search/index" class="iconfont icon-search" open-type="navigate"> -->
+    <input value="{{inputValue}}" class="search-input" placeholder="Search Restaurant..." bindinput="handleInput"/>
+        <image class="searchicon" src="../../images/search-icon.png"></image>
+    <!-- </navigator> -->
+</view>

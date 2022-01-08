@@ -1,0 +1,79 @@
+<!--pages/roomDetail/index.wxml-->
+<view class="container">
+    <view class="flex-wrp" style="flex-direction:column;">
+        <view style="display: flex;margin-top: 5px;color: #0D0D0D;">
+            <view style="font-size: 16px;font-weight: 600;margin-top: 5px;color: #0D0D0D;">{{room_info.roomname}}</view>
+            <view style="font-size: 14px;font-weight: 600;margin-top: 5px;color:#05C160;margin-left: auto;margin-right: 0;">
+                <span style="color: rgb(117, 117, 117)">$</span>
+                {{room_info.roomprice1}}
+                <span style="color: rgb(179, 178, 178)">/day</span>
+                </view>
+        </view>
+        <view style="margin-top: 8px;width: 40px;height: 1.5px;background-color: rgb(112, 112, 112);"></view>
+        <!-- <view style="display: flex;justify-content: space-between;">
+            <image class="power_item_icon" src="../../images/audio-icon.svg"></image>
+            <view style="font-size: 11px;color:#A3A3A3; margin-left: 7px;">{{room_info.detail}}</view>
+        </view>
+        <view style="margin-left: -5px;margin-right: -5px;margin-top: 5px;height: 1px;background-color: rgb(187, 187, 187);"></view> -->
+        <view style="display: flex;justify-content: space-between;margin-top:10px;" bindtap="showCalendar">
+            <view class="room-account-level">
+                <view class="room-account-level">{{startDate}} Date</view>
+                <view class="room-account-level">{{endDate}} Date</view>
+            </view>
+            <view class="room-account-level" style="margin-top: auto;margin-bottom: auto;margin-right: 0;margin-left: auto;font-size: 14px;">{{periodDay}} night in total</view>
+            <image class="power_item_icon" src="../../images/arrow.svg"></image>
+        </view>
+        <view style="margin-left: -5px;margin-right: -5px;margin-top: 5px;height: 1px;background-color: rgb(187, 187, 187);"></view>
+        <view style="display: flex;justify-content: space-between;margin-top:20px;">
+            <view class="room-count">Room Count</view>
+            <view class="room-count" style="color: #A3A3A3;margin-left: auto;margin-right: 0px;" bindtap="showRoomCountSelector" data-flag="flagRoomSelector">{{roomCount.label}}</view>
+            <image class="power_item_icon" src="../../images/arrow.svg"></image>
+        </view>
+        <view style="margin-left: -5px;margin-right: -5px;margin-top: 5px;height: 1px;background-color: rgb(187, 187, 187);"></view>
+        <view style="display: flex;justify-content: space-between;margin-top:20px;">
+            <view class="room-count">Animal count</view>
+            <view class="room-count" style="color: #A3A3A3;margin-left: auto;margin-right: 0px;" bindtap="showAnimalCountSelector" data-flag="flagAnimalSelector">{{animalCount.label}}</view>
+            <image class="power_item_icon" src="../../images/arrow.svg"></image>
+        </view>
+        <view style="margin-left: -5px;margin-right: -5px;margin-top: 5px;height: 1px;background-color: rgb(187, 187, 187);"></view>
+        <view style="display: flex;justify-content: space-between;margin-top:10px;">
+            <view class="room-count">Accout the car house</view>
+            <view class="room-count" style="color: #05C160;margin-left: auto;margin-right: 0px;">${{resultPrice}}</view>
+        </view>
+        <!-- <view style="display: flex;justify-content: space-between;margin-top:10px;">
+            <image style="width: 10px;height: 10px;margin-top: auto;margin-bottom: auto;margin-right: 5px;" src="../../images/next-icon.svg"></image>
+            <image style="width: 10px;height: 10px;margin-top: auto;margin-bottom: auto;margin-right: 5px;" src="../../images/stop-icon.svg"></image>
+            <view class="room-account-car" style="color: #A3A3A3;margin-left: auto;margin-right: 0px;">Account</view>
+            <image class="power_item_icon" src="../../images/arrow.svg"></image>
+        </view>
+        <view style="display: flex;justify-content: space-between;margin-top:10px;">
+            <view class="room-account-level">Accout the</view>
+            <view class="room-account-car" style="color: #05C160;margin-left: auto;margin-right: 0px;">${{room_info.price}}</view>
+        </view>
+        <view style="margin-left: -5px;margin-right: -5px;margin-top: 5px;height: 1px;background-color: rgb(187, 187, 187);"></view>
+         -->
+        <view class="room-subtitle">Title Level</view>
+        <textarea class="room-edit" placeholder="your message" value="{{noteText}}" name="textarea" bindinput="textareaInput"/>
+        <checkbox-group bindchange="checkboxChange">
+            <label class="checkbox">
+                <checkbox checked="{{type == 'new' ? false : true}}" style="font-size: 14px;margin: 10px;color: #A7AEBE;" >SELECT<span style="color: rgb(252, 206, 79);"> click to agree</span></checkbox>
+            </label>
+        </checkbox-group>
+        
+        <view  bindtap="{{noteText == '' || checked == false ? '' : (status == 1 || status == 3 ? 'clickCancelOrder' : 'showRoomDetail')}}" class="{{noteText =='' || checked == false ? 'view-btn-disable' : 'view-btn'}}">
+        {{status == 1 ? 'Order Cancel' : status == 2 ? 'Order Again' : status == 3 ? 'Order Cancel' : status == 4 ? 'Order Again' : 'Submit'}}
+        </view>
+        <cus-picker mode="{{modeSelector}}" cusPickerFlag="{{flagRoomSelector}}" list="{{selectorRoomList}}" defaultValue="{{selectorData}}" bind:no="noCusPicker" bind:ok="okCusRoomPicker"></cus-picker>
+        
+        <cus-picker mode="{{modeSelector}}" cusPickerFlag="{{flagAnimalSelector}}" list="{{selectorAnimalList}}" defaultValue="{{selectorData}}" bind:no="noCusPicker" bind:ok="okCusAnimalPicker"></cus-picker>
+      </view>
+    <hw-actionSheet bindactiontap="closeActionSheet" show="{{showActionsheet}}" actions="{{groups}}">
+        <!-- <view style="padding:60rpx;">
+        欢迎来到Demo集中营
+        </view> -->
+        
+        <calendar bind:change="dateChange" show="{{showActionsheet}}" spot="{{spot}}" ></calendar>
+        <!-- defaultTime="{{currentDate}}" -->
+        <!-- <view class="date-string">当前选中的日期是：{{dateString}}</view> -->
+    </hw-actionSheet>
+</view>

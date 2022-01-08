@@ -1,0 +1,40 @@
+{
+  "light": {
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#F7F7F7",
+    "backgroundColor": "#F7F7F7",
+
+    "tabBarColor": "#7A7E83",
+    "tabBarSelectedColor": "#3cc51f",
+    "tabBarBorderStyle": "black",
+    "tabBarBackgroundColor": "#ffffff",
+
+    "iconPathHome": "images/home.png",
+    "selectedIconPathHome": "images/home_HL.png",
+    "iconPathShop": "images/shop.png",
+    "selectedIconPathShop": "images/shop_HL.png",
+    "iconPathPersion": "images/persion.png",
+    "selectedIconPathPersion": "images/persion_HL.png",
+
+    "backgroundTextStyle": "dark"
+  },
+  "dark": {
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#1F1F1F",
+    "backgroundColor": "#1F1F1F",
+
+    "tabBarColor": "#FFFFFFCC",
+    "tabBarSelectedColor": "#51A937",
+    "tabBarBorderStyle": "white",
+    "tabBarBackgroundColor": "#ffffff",
+
+    "iconPathHome": "images/home_dark.png",
+    "selectedIconPathHome": "images/home_HL.png",
+    "iconPathShop": "images/shop_dark.png",
+    "selectedIconPathShop": "images/shop_HL.png",
+    "iconPathPersion": "images/persion_dark.png",
+    "selectedIconPathPersion": "images/persion_HL.png",
+
+    "backgroundTextStyle": "light"
+  }
+}

@@ -1,0 +1,9 @@
+/* pages/splash.wxss */
+.splash-container{
+
+}
+.splash-background{
+  display: flex;
+  margin: 0px;
+  position: absolute;
+}

@@ -1,0 +1,8 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "calendar":"../../components/calendar/calendar",
+    "hw-actionSheet": "../../components/actionSheet/actionSheet",
+    "cus-picker":"../../components/cusPicker/index"
+  }
+}

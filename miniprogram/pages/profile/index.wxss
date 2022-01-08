@@ -1,0 +1,128 @@
+.profile-container{
+  
+}
+.power_item_icon{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+.cover-view {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  /* opacity: .7; */
+}
+.profile-user-image{
+  width: 50px;
+  height: 50px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  border-radius: 50%;
+  background-color: rgb(114, 114, 114);
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(255, 255, 255);
+}
+.profile-user-image-login{
+  width: 50px;
+  height: 50px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: auto;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgb(114, 114, 114);
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(255, 255, 255);
+  overflow: hidden;
+}
+.first-info-panel{
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: white;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  
+}
+.second-info-panel{
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: white;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  
+}
+.profile_item_icon {
+  width: 15px;
+  height: 20px;
+}
+.profile-item-name{
+  font-size: 14px;
+  font-weight: 500;
+  color: #0D0D0D;
+  display: flex;
+  margin-left: 10px;
+  margin-right: auto;
+}
+.profile_item_icon{
+  margin-left: auto;
+  margin-right: 10px;
+  display: flex;
+  align-self: center;
+  left: 0px;
+}
+.item-list-view{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: raw;
+  width: 100%;
+  text-align-last: center;
+}
+.item-view{
+  width: 50px;
+  height: 70px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.item-subview{
+  font-size: 14px;
+  text-align: center;
+  color: #A3A3A3;
+}
+.item-image{
+  width: 30px;
+  height: 30px;
+  
+}
+.profile-cell-two{
+  display: flex;
+  justify-content: space-between;
+  margin-top:15px;
+  margin-left: 0px;
+  margin-right: auto;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 3px;
+  align-items: center;
+}

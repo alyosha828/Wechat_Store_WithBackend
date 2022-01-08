@@ -1,0 +1,64 @@
+<view class="cus-picker-outbox" wx:if="{{cusPickerFlag}}" catchtouchmove="handlerStop" catchtap="handlerNo">
+  <view class="cus-picker-in-box" catchtap="handlerStop">
+    <view class="cus-picker-cont-box">
+      <picker-view class="cus-picker-cont-picker" indicator-class="cus-picker-cont-picker-indicator-class" value="{{pickerValue}}" bindchange="handlerChange">
+        <block wx:if="{{mode === 'selector'}}">
+          <picker-view-column class="cus-picker-cont-picker-view-column">
+            <view wx:for="{{list}}" wx:key="index">{{item.label}}</view>
+          </picker-view-column>
+        </block>
+        <block wx:if="{{mode === 'multiSelector'}}">
+          <picker-view-column wx:for="{{list}}" wx:for-index="idx" wx:for-item="els" wx:key="idx" class="cus-picker-cont-picker-view-column">
+            <view wx:for="{{els}}" wx:key="index">{{item.label}}</view>
+          </picker-view-column>
+        </block>
+        <block wx:if="{{mode === 'cascadeSelector'}}">
+          <block wx:for="{{cascadeNums}}" wx:key="index">
+            <block wx:if="{{index === 0}}">
+              <picker-view-column class="cus-picker-cont-picker-view-column">
+                <view wx:for="{{list}}" wx:key="index">{{item.label}}</view>
+              </picker-view-column>
+            </block>
+            <block wx:if="{{index === 1}}">
+              <picker-view-column class="cus-picker-cont-picker-view-column">
+                <view wx:for="{{list[pickerValue[0]].children}}" wx:key="index">{{item.label}}</view>
+              </picker-view-column>
+            </block>
+            <block wx:if="{{index === 2}}">
+              <picker-view-column class="cus-picker-cont-picker-view-column">
+                <view wx:for="{{list[pickerValue[0]].children[pickerValue[1]].children}}" wx:key="index">{{item.label}}</view>
+              </picker-view-column>
+            </block>
+          </block>
+        </block>
+        <block wx:if="{{mode === 'time'}}">
+          <picker-view-column class="cus-picker-cont-picker-view-column">
+            <view wx:for="{{hours}}" wx:key="*this">{{item}}</view>
+          </picker-view-column>
+          <picker-view-column class="cus-picker-cont-picker-view-column">
+            <view wx:for="{{minutes}}" wx:key="*this">{{item}}</view>
+          </picker-view-column>
+        </block>
+        <block wx:if="{{mode === 'date'}}">
+          <picker-view-column class="cus-picker-cont-picker-view-column">
+            <view wx:for="{{years}}" wx:key="index">{{item}}</view>
+          </picker-view-column>
+          <block wx:if="{{fields !== 'year'}}">
+            <picker-view-column class="cus-picker-cont-picker-view-column">
+              <view wx:for="{{months}}" wx:key="index">{{item}}</view>
+            </picker-view-column>
+          </block>
+          <block wx:if="{{fields === 'day'}}">
+            <picker-view-column class="cus-picker-cont-picker-view-column">
+              <view wx:for="{{days}}" wx:key="index">{{item}}</view>
+            </picker-view-column>
+          </block>
+        </block>
+      </picker-view>
+    </view>
+    <view class="cus-picker-btn-box">
+      <view class="cus-picker-btn-no" style="color:{{noTextColor}};background:{{noTextBgColor}}" hover-class="none" bindtap="handlerNo">{{noText}}</view>
+      <view class="cus-picker-btn-ok" style="color:{{okTextColor}};background:{{okTextBgColor}}"  hover-class="none" bindtap="handlerOk">{{okText}}</view>
+    </view>
+  </view>
+</view>

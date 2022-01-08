@@ -1,0 +1,79 @@
+/* pages/profileIntro/index.wxss */
+.first-info-panel{
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: white;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  
+}  
+.view-btn{
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 8px;
+    background-color: #05C160;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    width: auto;
+    margin-left: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 9px;
+  }
+  .view-btn-disable{
+      font-size: 16px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-right: 8px;
+      background-color: #DCDCDC;
+      color: rgb(255, 255, 255);
+      text-align: center;
+      width: auto;
+      margin-left: auto;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      border-radius: 9px;
+    }
+  
+  .profile-edit{    
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 1px;
+    border-color: #E4E4E4;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    height: 20px;
+    width: auto;
+    font-size: small;
+  }
+  .weui-cell__bd{
+    color: #A7AEBE;
+    font-size: 14px;
+  }
+  .weui-check__label{
+    padding-left: 10px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 30px;
+  }
+  image{
+    height: 60rpx;
+    width: 60rpx;
+    display: inline-block
+  }

@@ -1,0 +1,94 @@
+<!--index.wxml-->
+<view class="container">
+
+  <!-- <image class="power_item_icon" src="../../images/arrow.svg"></image> -->
+  
+  
+  <view style="width: 100%;display: flex;flex-direction: raw;align-items: center;">
+    <!-- <image class="profile-user-image-login" mode="scaleToFill" src="../../images/persion_HL.png"></image> -->
+    <view class="profile-user-image-login">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view style="margin-top:20px;margin-left: 0px;margin-right: auto;width: 200px;font-size: 16px;color: #0D0D0D;font-weight: 550;">Hi, <open-data type="userNickName"></open-data></view>
+  </view>
+  <view class="page-body"  style="width:100%;position:relative;">
+    <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="changeSelect">
+        <block wx:for="{{dataList}}" wx:key="*this">
+          <swiper-item>
+            <view class="slide-image" style="background-color:{{item.backColor}};" mode="aspectFill" lazy-load="true">
+              <view style="display: flex;align-items: center;margin-top: 10px;margin-bottom: auto;width: 100%;padding-top: 10px;">
+                <image style="width: 34px;height: 38px;margin-left: 10px;border-radius: 5px;" src="{{item.image}}"></image>
+                <view style="color: white;font-size: 13px;font-weight: 600;margin-left: 10px;">LV.{{item.level}} {{item.name}}</view>
+                <view style="background-color: rgba(14, 14, 14, 0.199);color: white;border-radius: 20px;margin-right: 10px;margin-left: auto;font-size: 8px;padding:5px;padding-left: 10px;padding-right: 10px;">dummy text</view>
+              </view>
+              <view style="width: auto;height: 10px;border-top:1px solid;border-color: white;margin-left:20px;margin-right: 20px;margin-top: 10px;margin-bottom: auto;display: flex;margin-top: 40px;">
+                <view style="color: white;font-size: 8px;">{{item.levelstart}}</view>
+                <view style="color: white;font-size: 8px;margin-left: auto;margin-right: 0;">{{item.levelend}}</view>
+              </view>
+              <view style="display: flex;align-items: center;">
+                <image style="width: 10px;height: 13px;margin-left: 20px;" src="../../images/key-icon.png"></image>
+                <view style="color: white;font-size: 12px;margin-left: 15px;">{{item.detail}}</view>
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  
+  <view class="first-info-panel">
+    <view style="display: flex;justify-content: space-between;margin-top:15px;margin-left: 0px;margin-right: auto;width: 100%;align-items: center;">
+      <image style="background-color: #FCC214;width: 5px;height: 16px;"></image>
+      <view class="profile-item-name">Heading here</view>
+    </view>
+    <!-- <view style="width: 100%;margin-top: 5px;height: 1px;background-color: rgb(90, 90, 90);"></view> -->
+    <view class="item-list-view">
+      <view class="item-view">
+        <view class="item-parent-view" style="background-color: {{background[current].backColor}};">
+          <image class="item-image" src="../../images/level-page-award-icon.png"></image>
+        </view>
+        <view class="item-subview">Award</view>
+      </view>
+      <view class="item-view">
+        <view class="item-parent-view" style="background-color: {{background[current].backColor}};">
+          <image class="item-image" src="../../images/level-page-chat-icon.png"></image>
+        </view>
+        <view class="item-subview">Chat</view>
+      </view>
+      <view class="item-view">
+        <view class="item-parent-view" style="background-color: {{background[current].backColor}};">
+          <image class="item-image" src="../../images/level-page-gift-icon.png"></image>
+        </view>
+        <view class="item-subview">Gift</view>
+      </view>
+      <view class="item-view">
+        <view style="background-color: #0D0D0D;border-radius: 50%;width: 50px;height: 50px;align-items: center;display: flex;">
+          <image class="item-image"  src="../../images/level-page-security-icon.png"></image>
+        </view>
+        <view class="item-subview">Security</view>
+      </view>
+    </view>
+  </view>
+  <view class="first-info-panel">
+    <view class="profile-cell-two">
+      <image style="background-color: #FCC214;width: 5px;height: 16px;"></image>
+      <view class="profile-item-name">Heading here</view>
+    </view>
+    
+    <!-- <view class="profile-cell-two">
+      <view class="level-item-data"><span style="color: #0D0D0D;">1. </span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</view>
+    </view> -->
+    <view wx:key="title" wx:for="{{dataList[current].textlist}}" wx:for-item="item">
+      <view data-index="{{index}}" bindtap="onClickPowerInfo">
+        <view class="profile-cell-two">
+          <view class="level-item-data"><span style="color: #0D0D0D;">{{index + 1}}.</span>{{item}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+
+
+</view>

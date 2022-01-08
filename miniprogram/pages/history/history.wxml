@@ -1,0 +1,43 @@
+<!--pages/history/history.wxml-->
+<view class="container">
+  <view class="tabs-container">
+    <van-tabs bind:change="tabClick" sticky title-active-color="#0D0D0D" color="#0D0D0D">
+      <van-tab wx:for="{{tabs}}" wx:key="index" title="{{item}}" title-style="font-size: 10.5px;font-weight:550;"></van-tab>
+    </van-tabs>
+  </view>
+  <view style="width: 100%;height: 100%;">
+    <view style="background-color: white;border-radius: 25px;color: #0D0D0D;text-align: center;margin-top: 10px;font-size: 14px;width: 200px;padding: 5px;margin-left: auto;margin-right: auto;">
+      {{todayDay}}
+    </view>
+    <view style="margin-top: 10px;margin-left: 10px;margin-right: 10px;background-color: white;border-radius: 8px;padding-top: 5px;">
+      <view class="orderList" wx:key="title" wx:for="{{showList}}" wx:for-item="item">
+        <view class="orderCell" data-index="{{index}}" bindtap="clickOrderCell">
+          <view style="display: flex;">
+            <image style="width: 110px;height: 60px;border-radius: 5px;" src="{{item.imageurl}}" mode="aspectFill"></image>
+            <view style="display: flex;flex-direction: column;margin-left: 10px;align-items: center;width: 100%;">
+              <view class="orderCellText" style="margin-top: 2px;margin-bottom: auto;">Time: {{item.startdate}} - {{item.enddate}}</view>
+              <view style="margin-top: auto;margin-left: 0;margin-right: 0;margin-bottom: 5px;display: flex; width: 100%;font-size: 11px;">
+                <view style="margin-top: auto;margin-bottom: 2px;display: flex;">Price: {{item.setprice}}$</view>
+                <view style="margin-left: auto;margin-right: 20px;background-color: #0D0D0D;color: white;border-radius: 5px;width: 100px;text-align: center;padding-top: 5px;padding-bottom: 5px;">
+                {{item.status === 1 ? 'Paid Order' : item.status === 2 ? 'Canceled Order' : item.status === 3 ? 'Progressing' : item.status === 4 ? 'Finished Order' : 'Order'}}
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view style="width: 200px;height: 200px;margin-left: auto;margin-right: auto;margin-top: 20px;margin-bottom: 30px;align-items: center;" hidden="{{showList.length > 0}}">
+        <view style="padding-left: 25px;margin-left: auto;margin-right: auto;">
+          <image style="width: 150px;height: 150px;margin-left: auto;margin-right: 25px;" src="../../images/emptyList.png" mode="aspectFill"></image>
+        </view>
+        <view style="text-align: center;margin-left: auto;margin-right: auto;">It is empty in here</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view style="position: fixed;display: flex;flex-direction: column;bottom: 0;right: 0;">
+    <image style="width: 60px;height: 60px;" src="../../images/share-icon.png"></image>
+    <image style="width: 60px;height: 60px;" src="../../images/telephone-icon.png"></image>
+    <image style="width: 60px;height: 60px;" src="../../images/message-icon.png"></image>
+</view>
